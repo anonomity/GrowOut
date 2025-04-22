@@ -1,0 +1,14 @@
+name: Build
+
+on:
+  push:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout Repository
+       uses: actions/checkout@v4
+
+     - name: Say Hi 
+       run: echo "Hello World!"
