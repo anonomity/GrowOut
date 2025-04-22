@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://blmbhb6rg7wu1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Label" type="Label" parent="."]
+offset_left = 185.0
+offset_top = 128.0
+offset_right = 891.0
+offset_bottom = 378.0
+text = "Hi Mom I'm on Tv"
