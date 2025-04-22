@@ -14,3 +14,11 @@ config/name="GrowOut"
 run/main_scene="uid://blmbhb6rg7wu1"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GDConsole="*res://addons/gdconsole/gdconsole.gd"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/gdconsole/plugin.cfg")
