@@ -6,12 +6,16 @@ const sprite_width = 180
 var habit : Habit
 const DAY_SECONDS = 24 * 60 * 60 
 var days_progressed
+
 @export var new_sprite = false:
 	set(new):
 		new_sprite = new
 		print("test")
 		set_h_frames()
 
+func _ready() -> void:
+	set_h_frames()
+	
 func set_h_frames():
 	if tree_sprite:
 		var h_frames = tree_sprite.texture.get_width()/180
@@ -40,6 +44,7 @@ func add_day():
 	set_tree(days_progressed)
 	
 func set_tree(days_progressed):
+	set_h_frames()
 	if days_progressed > tree_sprite.hframes:
 		#max h_frames
 		tree_sprite.frame = tree_sprite.hframes-1

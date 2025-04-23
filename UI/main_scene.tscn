@@ -37,6 +37,7 @@ offset_right = 86.5
 layout_mode = 1
 
 [node name="Tree" parent="." instance=ExtResource("5_0h5rb")]
+new_sprite = null
 
 [node name="console" type="Control" parent="."]
 anchors_preset = 0
