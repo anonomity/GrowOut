@@ -26,6 +26,7 @@ func load_habits():
 	var habit_dir = DirAccess.open("user://Habits/")
 	
 	var files = habit_dir.get_files()
+	
 	if files.size() > 0:
 		var habit_path = habits_dir_path + files[0]
 		var habit: Habit = ResourceLoader.load(habit_path)

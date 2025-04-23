@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://blmbhb6rg7wu1"]
+[gd_scene load_steps=7 format=3 uid="uid://blmbhb6rg7wu1"]
 
 [ext_resource type="Script" uid="uid://c6gi856j1lbew" path="res://UI/main_scene.gd" id="1_4uthp"]
 [ext_resource type="Texture2D" uid="uid://buxal8q2v55fq" path="res://assets/background.png" id="2_fk3jj"]
 [ext_resource type="PackedScene" uid="uid://vrwwsdpyur2g" path="res://UI/tool_bar.tscn" id="3_h8lhh"]
 [ext_resource type="PackedScene" uid="uid://b56gkxufymejb" path="res://UI/AddHabitPrompt.tscn" id="4_kh1fh"]
 [ext_resource type="PackedScene" uid="uid://daqqxok8j1myh" path="res://Tree/Tree.tscn" id="5_0h5rb"]
+[ext_resource type="Script" uid="uid://cohhidoc5unco" path="res://UI/console.gd" id="6_fk3jj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -36,3 +37,9 @@ offset_right = 86.5
 layout_mode = 1
 
 [node name="Tree" parent="." instance=ExtResource("5_0h5rb")]
+
+[node name="console" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("6_fk3jj")
