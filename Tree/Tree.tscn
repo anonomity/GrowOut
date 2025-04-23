@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://daqqxok8j1myh"]
+
+[ext_resource type="Script" uid="uid://bgdvlmftga6ph" path="res://Tree/TreeSimulation.gd" id="1_nbyt5"]
+[ext_resource type="Texture2D" uid="uid://dagpbm54mw6sw" path="res://assets/tree_sprite_sheet.png" id="2_hnqgh"]
+
+[node name="Tree" type="Node2D"]
+script = ExtResource("1_nbyt5")
+new_sprite = true
+
+[node name="HabitLabel" type="Label" parent="."]
+unique_name_in_owner = true
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 40.0
+offset_right = 130.0
+offset_bottom = 32.0
+grow_horizontal = 2
+
+[node name="TreeSprite" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(90, 160)
+texture = ExtResource("2_hnqgh")
+hframes = 6

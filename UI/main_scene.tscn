@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://blmbhb6rg7wu1"]
+
+[ext_resource type="Script" uid="uid://c6gi856j1lbew" path="res://UI/main_scene.gd" id="1_4uthp"]
+[ext_resource type="Texture2D" uid="uid://buxal8q2v55fq" path="res://assets/background.png" id="2_fk3jj"]
+[ext_resource type="PackedScene" uid="uid://vrwwsdpyur2g" path="res://UI/tool_bar.tscn" id="3_h8lhh"]
+[ext_resource type="PackedScene" uid="uid://b56gkxufymejb" path="res://UI/AddHabitPrompt.tscn" id="4_kh1fh"]
+[ext_resource type="PackedScene" uid="uid://daqqxok8j1myh" path="res://Tree/Tree.tscn" id="5_0h5rb"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4uthp")
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_fk3jj")
+
+[node name="ToolBar" parent="." instance=ExtResource("3_h8lhh")]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -86.5
+offset_right = 86.5
+
+[node name="Prompt" parent="." instance=ExtResource("4_kh1fh")]
+layout_mode = 1
+
+[node name="Tree" parent="." instance=ExtResource("5_0h5rb")]

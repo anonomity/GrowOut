@@ -17,8 +17,18 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GDConsole="*res://addons/gdconsole/gdconsole.gd"
+Habit="*res://Habits/Habit.gd"
+
+[display]
+
+window/size/viewport_width=180
+window/size/viewport_height=320
+window/stretch/mode="canvas_items"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/gdconsole/plugin.cfg")
+enabled=PackedStringArray()
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

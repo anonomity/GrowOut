@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://vrwwsdpyur2g"]
+
+[ext_resource type="Texture2D" uid="uid://d1vm2hju45emh" path="res://assets/check_button.png" id="1_6w8j5"]
+[ext_resource type="Texture2D" uid="uid://cnf7tqpt7w13f" path="res://assets/add_button.png" id="2_c1ewm"]
+[ext_resource type="Texture2D" uid="uid://b61himgboy8fi" path="res://assets/ex_button.png" id="3_h166a"]
+
+[node name="ToolBar" type="HBoxContainer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CheckInButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("1_6w8j5")
+
+[node name="AddHabitButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("2_c1ewm")
+
+[node name="CancelButton" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_h166a")

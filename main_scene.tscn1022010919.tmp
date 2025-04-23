@@ -1,0 +1,96 @@
+[gd_scene load_steps=6 format=3 uid="uid://blmbhb6rg7wu1"]
+
+[ext_resource type="Script" uid="uid://c6gi856j1lbew" path="res://main_scene.gd" id="1_0f027"]
+[ext_resource type="Texture2D" uid="uid://buxal8q2v55fq" path="res://assets/background.png" id="2_2c62f"]
+[ext_resource type="Texture2D" uid="uid://d1vm2hju45emh" path="res://assets/check_button.png" id="3_8mm7a"]
+[ext_resource type="Texture2D" uid="uid://cnf7tqpt7w13f" path="res://assets/add_button.png" id="4_hq1ik"]
+[ext_resource type="Texture2D" uid="uid://b61himgboy8fi" path="res://assets/ex_button.png" id="5_nfk4m"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0f027")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_2c62f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -39.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CheckInButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("3_8mm7a")
+
+[node name="AddHabitButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("4_hq1ik")
+
+[node name="CancelButton" type="TextureButton" parent="TextureRect/HBoxContainer"]
+custom_minimum_size = Vector2(55, 0)
+layout_mode = 2
+texture_normal = ExtResource("5_nfk4m")
+
+[node name="Prompt" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -63.0
+offset_top = -102.0
+offset_right = 63.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Prompt"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.54902, 0.478431, 0.45098, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Prompt/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WriteHabitLabel" type="Label" parent="Prompt/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "write habit"
+horizontal_alignment = 1
+
+[node name="HabitTextEdit" type="TextEdit" parent="Prompt/ColorRect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="SubmitHabit" type="Button" parent="Prompt/ColorRect/VBoxContainer"]
+layout_mode = 2
+text = "add"
