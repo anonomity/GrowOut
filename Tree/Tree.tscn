@@ -33,4 +33,4 @@ unique_name_in_owner = true
 material = SubResource("ShaderMaterial_dk7to")
 position = Vector2(90, 160)
 texture = ExtResource("2_hnqgh")
-hframes = 6
+hframes = 8

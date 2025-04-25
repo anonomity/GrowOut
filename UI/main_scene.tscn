@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://blmbhb6rg7wu1"]
+[gd_scene load_steps=8 format=3 uid="uid://blmbhb6rg7wu1"]
 
 [ext_resource type="Script" uid="uid://c6gi856j1lbew" path="res://UI/main_scene.gd" id="1_4uthp"]
 [ext_resource type="Texture2D" uid="uid://buxal8q2v55fq" path="res://assets/background.png" id="2_fk3jj"]
 [ext_resource type="PackedScene" uid="uid://vrwwsdpyur2g" path="res://UI/tool_bar.tscn" id="3_h8lhh"]
+[ext_resource type="PackedScene" uid="uid://bmjbijhy5dlu8" path="res://Tree/TreeWorld.tscn" id="3_kh1fh"]
 [ext_resource type="PackedScene" uid="uid://b56gkxufymejb" path="res://UI/AddHabitPrompt.tscn" id="4_kh1fh"]
 [ext_resource type="PackedScene" uid="uid://daqqxok8j1myh" path="res://Tree/Tree.tscn" id="5_0h5rb"]
 [ext_resource type="Script" uid="uid://cohhidoc5unco" path="res://UI/console.gd" id="6_fk3jj"]
@@ -25,6 +26,23 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_fk3jj")
 
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+mesh_lod_threshold = 0.0
+texture_mipmap_bias = -0.573
+size = Vector2i(180, 320)
+render_target_update_mode = 4
+
+[node name="Tree" parent="SubViewportContainer/SubViewport" instance=ExtResource("3_kh1fh")]
+
 [node name="ToolBar" parent="." instance=ExtResource("3_h8lhh")]
 layout_mode = 1
 anchors_preset = 7
@@ -37,7 +55,7 @@ offset_right = 86.5
 layout_mode = 1
 
 [node name="Tree" parent="." instance=ExtResource("5_0h5rb")]
-new_sprite = null
+visible = false
 
 [node name="console" type="Control" parent="."]
 anchors_preset = 0

@@ -1,0 +1,55 @@
+[gd_scene load_steps=9 format=3 uid="uid://bmjbijhy5dlu8"]
+
+[ext_resource type="Texture2D" uid="uid://c65dm47vcb3gp" path="res://assets/texture/grass_2.png" id="1_e8vr6"]
+[ext_resource type="Texture2D" uid="uid://dagpbm54mw6sw" path="res://assets/tree_sprite_sheet.png" id="2_tnoye"]
+[ext_resource type="Texture2D" uid="uid://csfjj1lh3s1h1" path="res://assets/alps_field_4k.hdr" id="3_e8vr6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7rxfo"]
+albedo_texture = ExtResource("1_e8vr6")
+albedo_texture_force_srgb = true
+rim_tint = 0.0
+uv1_triplanar = true
+texture_filter = 0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_narux"]
+material = SubResource("StandardMaterial3D_7rxfo")
+size = Vector2(1.08, 1.24)
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tnoye"]
+panorama = ExtResource("3_e8vr6")
+
+[sub_resource type="Sky" id="Sky_m2j30"]
+sky_material = SubResource("PanoramaSkyMaterial_tnoye")
+
+[sub_resource type="Environment" id="Environment_7rxfo"]
+background_mode = 2
+sky = SubResource("Sky_m2j30")
+
+[node name="Tree" type="Node3D"]
+
+[node name="ground" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, -0.137014)
+mesh = SubResource("PlaneMesh_narux")
+
+[node name="Sprite3D" type="Sprite3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.07951e-08, 0, -0.352255)
+offset = Vector2(0, 69.22)
+texture_filter = 0
+texture = ExtResource("2_tnoye")
+hframes = 8
+frame = 7
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 3.88578e-15, 8.74228e-08, 3.78759e-08, 0.901274, 0.43325, -7.87919e-08, 0.43325, -0.901274, 0, 0.391988, -0.166229)
+keep_aspect = 0
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.340823, 0.940128, 0, -0.940128, -0.340823, 0, 6.80756, -3.27033)
+light_color = Color(1, 0.82316, 0.393959, 1)
+light_energy = 1.355
+light_indirect_energy = 4.322
+light_volumetric_fog_energy = 7.737
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7rxfo")
