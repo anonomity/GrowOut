@@ -4,16 +4,19 @@ extends Control
 @onready var add_habit_button: TextureButton =$ToolBar/AddHabitButton
 @onready var cancel_button: TextureButton = $ToolBar/CancelButton
 
-@onready var habit_text_edit: TextEdit = $Prompt/ColorRect/VBoxContainer/HabitTextEdit
+@onready var habit_text_edit: TextEdit = $Prompt/ColorRect/MarginContainer/VBoxContainer/HabitTextEdit
 @onready var prompt: Control = $Prompt
-@onready var submit_habit: Button = $Prompt/ColorRect/VBoxContainer/SubmitHabit
+@onready var submit_habit: Button = $Prompt/ColorRect/MarginContainer/VBoxContainer/SubmitHabit
+@onready var close_button: Button = $Prompt/ColorRect/CloseButton
 
 @onready var TreeScene: Node2D = $Tree
 
+const Habit = preload("uid://be7s6b4dhakj8")
 
 func _ready() -> void:
 	submit_habit.pressed.connect(on_submit_habit)
 	add_habit_button.pressed.connect(on_add_habit)
+	close_button.pressed.connect(on_close_button)
 	load_habits()
 	
 func load_habits():
@@ -28,6 +31,9 @@ func load_habits():
 	var files = habit_dir.get_files()
 	
 	if files.size() > 0:
+		if files.size() > 1:
+			# add directional arrows
+			pass
 		var habit_path = habits_dir_path + files[0]
 		var habit: Habit = ResourceLoader.load(habit_path)
 		TreeScene.set_habit(habit)
@@ -49,8 +55,12 @@ func on_submit_habit():
 		var path = "user://Habits/" + habit_text_edit.text + ".tres"
 		
 		ResourceSaver.save(habit_resource, path)
+		on_close_button()
 	else:
 		printerr("tried to submit empty string!")
+
+func on_close_button():
+	prompt.visible = false
 	
 func on_add_habit():
 	prompt.visible = !prompt.visible

@@ -3,6 +3,7 @@ extends Node2D
 
 const sprite_width = 180
 @onready var tree_sprite: Sprite2D = $TreeSprite
+const Habit = preload("uid://be7s6b4dhakj8")
 var habit : Habit
 const DAY_SECONDS = 24 * 60 * 60 
 var days_progressed

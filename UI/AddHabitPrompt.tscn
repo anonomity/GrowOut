@@ -1,7 +1,8 @@
-[gd_scene format=3 uid="uid://b56gkxufymejb"]
+[gd_scene load_steps=2 format=3 uid="uid://b56gkxufymejb"]
+
+[ext_resource type="Theme" uid="uid://4o6fswfc1w23" path="res://assets/MainTheme.tres" id="1_2dq2e"]
 
 [node name="Prompt" type="Control"]
-visible = false
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5
@@ -14,17 +15,9 @@ offset_right = 63.0
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_2dq2e")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.54902, 0.478431, 0.45098, 1)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+[node name="ColorRect" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,15 +25,41 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="WriteHabitLabel" type="Label" parent="ColorRect/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect/MarginContainer"]
 layout_mode = 2
-text = "write habit"
+
+[node name="WriteHabitLabel" type="Label" parent="ColorRect/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Write Habit"
 horizontal_alignment = 1
 
-[node name="HabitTextEdit" type="TextEdit" parent="ColorRect/VBoxContainer"]
+[node name="HabitTextEdit" type="TextEdit" parent="ColorRect/MarginContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="SubmitHabit" type="Button" parent="ColorRect/VBoxContainer"]
+[node name="SubmitHabit" type="Button" parent="ColorRect/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "add"
+
+[node name="CloseButton" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -14.0
+offset_bottom = 14.0
+grow_horizontal = 0
+theme_type_variation = &"CloseButton"
+text = "x"

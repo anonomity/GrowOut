@@ -1,0 +1,49 @@
+[gd_resource type="Theme" load_steps=6 format=3 uid="uid://4o6fswfc1w23"]
+
+[ext_resource type="FontFile" uid="uid://5got0vxxuh1r" path="res://LanaPixel_NoKorean.ttf" id="1_x238d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vifa4"]
+bg_color = Color(0.464063, 0.298502, 0.134712, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_otkdr"]
+bg_color = Color(0.6, 0.0598044, 0.014994, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x238d"]
+bg_color = Color(0.297421, 0.6, 0.360401, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.755315, 0.8, 0.411332, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2l21"]
+bg_color = Color(0.0862745, 0.160784, 0.0588235, 0.435294)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[resource]
+default_font = ExtResource("1_x238d")
+Button/font_sizes/font_size = 11
+Button/styles/normal = SubResource("StyleBoxFlat_vifa4")
+CloseButton/base_type = &"Button"
+CloseButton/font_sizes/font_size = 11
+CloseButton/fonts/font = ExtResource("1_x238d")
+CloseButton/styles/normal = SubResource("StyleBoxFlat_otkdr")
+Label/font_sizes/font_size = 11
+Label/fonts/font = ExtResource("1_x238d")
+Panel/styles/panel = SubResource("StyleBoxFlat_x238d")
+TextEdit/font_sizes/font_size = 11
+TextEdit/styles/normal = SubResource("StyleBoxFlat_l2l21")
