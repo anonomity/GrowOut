@@ -1,5 +1,6 @@
 extends Control
-@onready var tree: Node2D = $"../Tree"
+@onready var tree: Node3D = $"../SubViewportContainer/SubViewport/Tree"
+
 
 func _ready():
 	GDConsole.create_command(add_day)

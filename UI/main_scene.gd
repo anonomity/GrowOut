@@ -9,7 +9,7 @@ extends Control
 @onready var submit_habit: Button = $Prompt/ColorRect/MarginContainer/VBoxContainer/SubmitHabit
 @onready var close_button: Button = $Prompt/ColorRect/CloseButton
 
-@onready var TreeScene: Node2D = $Tree
+@onready var TreeScene: Node3D = $SubViewportContainer/SubViewport/Tree
 
 const Habit = preload("uid://be7s6b4dhakj8")
 
@@ -36,6 +36,7 @@ func load_habits():
 			pass
 		var habit_path = habits_dir_path + files[0]
 		var habit: Habit = ResourceLoader.load(habit_path)
+		%HabitLabel.text = habit.habit
 		TreeScene.set_habit(habit)
 		print(files)
 	

@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://blmbhb6rg7wu1"]
+[gd_scene load_steps=7 format=3 uid="uid://blmbhb6rg7wu1"]
 
 [ext_resource type="Script" uid="uid://c6gi856j1lbew" path="res://UI/main_scene.gd" id="1_4uthp"]
 [ext_resource type="Texture2D" uid="uid://buxal8q2v55fq" path="res://assets/background.png" id="2_fk3jj"]
 [ext_resource type="PackedScene" uid="uid://vrwwsdpyur2g" path="res://UI/tool_bar.tscn" id="3_h8lhh"]
 [ext_resource type="PackedScene" uid="uid://bmjbijhy5dlu8" path="res://Tree/TreeWorld.tscn" id="3_kh1fh"]
 [ext_resource type="PackedScene" uid="uid://b56gkxufymejb" path="res://UI/AddHabitPrompt.tscn" id="4_kh1fh"]
-[ext_resource type="PackedScene" uid="uid://daqqxok8j1myh" path="res://Tree/Tree.tscn" id="5_0h5rb"]
 [ext_resource type="Script" uid="uid://cohhidoc5unco" path="res://UI/console.gd" id="6_fk3jj"]
 
 [node name="Control" type="Control"]
@@ -55,20 +54,48 @@ offset_right = 86.5
 visible = false
 layout_mode = 1
 
-[node name="Tree" parent="." instance=ExtResource("5_0h5rb")]
-visible = false
-new_sprite = false
-
 [node name="console" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("6_fk3jj")
 
-[node name="Button" type="Button" parent="."]
+[node name="RightDirectionButton" type="Button" parent="."]
 layout_mode = 0
 offset_left = 159.0
 offset_top = 126.0
 offset_right = 180.0
 offset_bottom = 145.0
 text = "->"
+
+[node name="LeftDirectionButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1.095
+offset_top = 126.0
+offset_right = 22.095
+offset_bottom = 145.0
+text = "<-"
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 4.0
+offset_right = 48.0
+offset_bottom = 26.0
+grow_horizontal = 2
+
+[node name="HabitLabel" type="Label" parent="Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -42.0
+offset_top = 4.0
+offset_right = 44.0
+offset_bottom = 23.0
+grow_horizontal = 2
+horizontal_alignment = 1
